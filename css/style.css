@@ -18,7 +18,7 @@ body {
 
 .header {
     background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0,1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -72,7 +72,6 @@ body {
 }
 
 
-/* Скрываем бургер-меню пока что */
 .nav__toggle {
     display: none;
 }
@@ -105,7 +104,7 @@ body {
     justify-content: center;
 }
 
-.bth {
+.btn {
     padding: 12px 30px;
     border-radius: 5px;
     text-decoration: none;
@@ -127,7 +126,7 @@ body {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0.0.0.0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -159,7 +158,13 @@ section {
     margin-bottom: 1.5rem;
 }
 
-.skills_grid {
+.about__text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.skills__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
@@ -169,7 +174,7 @@ section {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0.0.0.0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
 }
 
@@ -188,8 +193,71 @@ section {
     border-bottom: 1px solid #eee;
 }
 
+.skill-card, .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
 .skill-card li:last-child {
     border-bottom: none;
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card__image {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.project-card__content {
+    padding: 1.5rem;
+}
+
+.project-card__tech {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.project-card__tech span {
+    background: #f8f9fa;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.project-card__links {
+    display: flex;
+    gap: 1rem;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 
@@ -205,7 +273,7 @@ section {
         background: white;
         flex-direction: column;
         padding: 1rem;
-        box-shadow: 0 5px 10px rgba(0.0.0.0.1);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .nav__menu.active {

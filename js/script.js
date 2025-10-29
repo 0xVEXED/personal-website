@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
+
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - 80;
+                
                 window.scrollTo({
-                    top: targetSection.offsetTop - 80,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
             }
@@ -35,4 +38,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    //анимация при скроле
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.skill-card, .project-card');
+
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)'
+            }
+        });
+    }
+
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
 });
