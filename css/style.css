@@ -51,9 +51,26 @@ body {
     font-weight: 500;
 }
 
+
+/* анимации */
+.nav__toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav__toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+/* hovers */
 .nav__menu a:hover {
     color: #007bff;
 }
+
 
 /* Скрываем бургер-меню пока что */
 .nav__toggle {
@@ -181,6 +198,18 @@ section {
 @media (max-width: 768px) {
     .nav__menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0.0.0.0.1);
+    }
+
+    .nav__menu.active {
+        display: flex;
     }
     
     .nav__toggle {
@@ -238,3 +267,4 @@ section {
         padding: 60px 0;
     }
 }
+
