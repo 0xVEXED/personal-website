@@ -203,6 +203,10 @@ section {
     border-bottom: none;
 }
 
+.projects {
+    background: #f8f9fa;
+}
+
 .projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
